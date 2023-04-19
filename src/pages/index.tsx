@@ -12,39 +12,6 @@ interface iSelector {
   selected: boolean;
 }
 
-const data = [
-  {
-    name: "2020",
-    type: "column",
-    data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120],
-    visible: false,
-  },
-  {
-    name: "2021",
-    type: "column",
-    data: [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],
-    visible: false,
-  },
-  {
-    name: "2022",
-    type: "column",
-    data: [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
-    visible: false,
-  },
-  {
-    name: "2023",
-    type: "column",
-    data: [40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
-    visible: true,
-  },
-  {
-    name: "2024",
-    type: "column",
-    data: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160],
-    visible: true,
-  },
-];
-
 export default function Home() {
   const [selectors, setSelectors] = useState<iSelector[]>([
     { companyName: "", product: "Kim ngạch", selected: true },
@@ -72,9 +39,6 @@ export default function Home() {
   };
 
   const reRenderSeriesChart = () => {
-    const selected =
-      selectors[selectors.findIndex((item: iSelector) => item.selected)];
-
     setSeries([
       {
         name: "2020",
